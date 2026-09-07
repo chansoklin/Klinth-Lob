@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinth Eats · Khmer Heritage · Global Flavors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>KLINTH EATS</h1>
+                <p class="tagline">Khmer Heritage · Global Flavors</p>
+            </div>
+        <nav class="main-nav">
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('khmer')">Khmer</a>
+    <a href="#" onclick="showSection('asian')">Asian</a>
+    <a href="#" onclick="showSection('european')">European</a>
+    <a href="#" onclick="showSection('myrecipes')">My Kitchen</a>
+    <a href="#" onclick="showSection('about')">About</a>
+</nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Home Section -->
+        <div id="home-section">
+            
+            <!-- Hero Banner -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Preserving Khmer Heritage</h2>
+                    <h3>One Recipe at a Time</h3>
+                    <p>Welcome to my kitchen. I'm Klinth, and I'm on a mission to share Cambodia's beautiful cuisine — plus flavors from every corner of the world.</p>
+                    <a href="#" onclick="showSection('khmer'); return false;" class="hero-btn">Explore Khmer Recipes</a>
+                </div>
+            </section>
+
+            <!-- Featured Recipe of the Week -->
+            <section class="featured-section">
+                <h2>Featured Recipe</h2>
+                <div id="featured-recipe">
+                    <!-- Featured recipe will load here via JavaScript -->
+                </div>
+            </section>
+
+            <!-- My Story Section -->
+<section class="story-section">
+    <div class="story-content">
+        <h2>My Story</h2>
+        <p>Hello, I'm <strong>Klinth</strong> — born and raised in Cambodia. Growing up, my mother's kitchen was the heart of our home. The aroma of lemongrass, coconut milk, and kroeung paste filled the air every morning. Those scents weren't just cooking — they were love, memory, and identity.</p>
+        
+        <p>I created <strong>Klinth Eats</strong> to preserve those flavors before they faded. But my curiosity didn't stop at Cambodia's borders. I traveled through Japanese ramen shops, Korean barbecue houses, Vietnamese pho kitchens, and Italian trattorias. Everywhere I went, I learned that food is the universal language — one that welcomes everyone to the table.</p>
+        
+        <p>This website is my digital cookbook. It's also my love letter to my mother, to Cambodia, and to every cook who has ever shared a meal with a stranger. My mission is simple: preserve authentic Khmer recipes, explore global cuisine respectfully, and bring people together — one recipe at a time.</p>
+        
+        <p><em>— Klinth</em></p>
+        
+        <a href="#" onclick="showSection('about'); return false;" class="story-link">Read Full Story</a>
+    </div>
+    <div class="story-image">
+        <img src="images/IMG_1.jpg">
+    </div>
+</section>
+            <!-- Cuisine Sections -->
+            <section class="culture-section">
+                <h2>Khmer Cuisine</h2>
+                <div class="recipe-grid" id="khmer-recipes"></div>
+                <div class="view-all">
+                    <a href="#" onclick="showSection('khmer'); return false;">View All Khmer Recipes →</a>
+                </div>
+            </section>
+
+            <section class="culture-section">
+                <h2>Asian Cuisine</h2>
+                <div class="recipe-grid" id="asian-recipes"></div>
+                <div class="view-all">
+                    <a href="#" onclick="showSection('asian'); return false;">View All Asian Recipes →</a>
+                </div>
+            </section>
+
+            <section class="culture-section">
+                <h2>European Cuisine</h2>
+                <div class="recipe-grid" id="european-recipes"></div>
+                <div class="view-all">
+                    <a href="#" onclick="showSection('european'); return false;">View All European Recipes →</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Khmer Section (full page) -->
+        <div id="khmer-section" style="display: none;">
+            <section class="culture-section">
+                <h2>Khmer Cuisine — Cambodia</h2>
+                <p class="section-intro">Traditional Cambodian recipes passed down through generations. Rich flavors, fresh herbs, and the heart of Khmer culture.</p>
+                <div class="recipe-grid" id="khmer-full-recipes"></div>
+            </section>
+        </div>
+
+        <!-- Asian Section (full page) -->
+        <div id="asian-section" style="display: none;">
+            <section class="culture-section">
+                <h2>Asian Cuisine</h2>
+                <p class="section-intro">Exploring the diverse flavors of Asia — from Japanese sushi to Thai curries and beyond.</p>
+                <div class="recipe-grid" id="asian-full-recipes"></div>
+            </section>
+        </div>
+
+        <!-- European Section (full page) -->
+        <div id="european-section" style="display: none;">
+            <section class="culture-section">
+                <h2>European Cuisine</h2>
+                <p class="section-intro">Classic European dishes — Italian, French, Spanish, and more.</p>
+                <div class="recipe-grid" id="european-full-recipes"></div>
+            </section>
+        </div>
+                <!-- My Kitchen Section -->
+        <div id="myrecipes-section" style="display: none;">
+            <section class="culture-section">
+                <h2>My Kitchen</h2>
+          <p class="section-intro">My kitchen is where I share my own food, my mom's recipes, and where I learn to cook. Some dishes I grew up eating. Others I discovered and fell in love with. Every recipe here is a piece of my journey — from my first attempt to the versions I make now.</p>
+                <div class="recipe-grid" id="myrecipes-recipes"></div>
+            </section>
+        </div>
+        <!-- About Section -->
+        <div id="about-section" style="display: none;">
+            <section class="about-section">
+                <h2>About Klinth Eats</h2>
+                <div class="about-content">
+                    <p>Hello! I'm <strong>Klinth</strong> — a Cambodian food lover on a mission to share my culture's beautiful cuisine and explore flavors from around the world.</p>
+                    
+                    <p>Klinth Eats was born from a simple idea: <strong>food brings people together</strong>. Whether it's my grandmother's secret Fish Amok recipe or a new dish I discovered while traveling, I want to preserve and share these flavors with you.</p>
+                    
+                    <p>Here you'll find:</p>
+                    <ul>
+                        <li>Authentic Khmer recipes from Cambodia</li>
+                        <li>Asian cuisine from Japan, Korea, and more</li>
+                        <li>European classics I've learned to love</li>
+                        <li>Personal stories behind each dish</li>
+                    </ul>
+                    
+                    <p>Thank you for visiting. Now let's cook something delicious together.</p>
+                    
+                    <p>— Klinth</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>Klinth Eats · A Cambodian Kitchen</p>
+    </footer>
+       <!-- Recipe Modal Popup -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <button class="modal-print" onclick="printRecipe()">Print</button>
+            <div id="modal-recipe-details"></div>
+            <div id="modal-related"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+    <!-- Search Section - Minimal -->
+    <div class="search-wrapper">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search recipes" onkeyup="searchRecipes()">
+            <span class="search-icon">⌕</span>
+        </div>
+    </div>
+
+    <!-- Filters - Minimal Chips -->
+    <div class="filters">
+        <button class="filter-chip active" onclick="filterByDiet('all')">All</button>
+        <button class="filter-chip" onclick="filterByDiet('vegetarian')">Vegetarian</button>
+        <button class="filter-chip" onclick="filterByDiet('meat')">Meat</button>
+        <button class="filter-chip" onclick="filterByDiet('seafood')">Seafood</button>
+        <button class="filter-chip" onclick="filterByDiet('spicy')">Spicy</button>
+        <button class="filter-chip" onclick="filterByDiet('soup')">Soup</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>     
