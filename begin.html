@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLINTH LOB · Begin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .preview-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .preview-card::after {
+      content: '';
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+
+    .preview-card:hover::after {
+      width: 40px;
+    }
+
+    .preview-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-hint {
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      letter-spacing: 1px;
+    }
+
+    .preview-card:hover .card-hint {
+      opacity: 0.6;
+    }
+
+    .fade-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .fade-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .whisper {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pale-lavender);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10000;
+      white-space: nowrap;
+      font-style: italic;
+      border: 1px solid var(--border-light);
+    }
+
+    .whisper.show {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>
+          <a href="begin.html">
+            <span class="logo-text">KLINTH</span>
+            <span class="logo-lob"> LOB</span>
+          </a>
+        </h1>
+        <p class="tagline">inner place · shared outward</p>
+      </div>
+      <nav class="main-nav">
+        <a href="begin.html" class="active">Begin</a>
+        <a href="arts.html">Arts</a>
+        <a href="craft.html">Craft</a>
+        <a href="drift.html">Drift</a>
+        <a href="root.html">Root</a>
+      </nav>
+      <button id="darkModeToggle" class="dark-mode-btn">Dark</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h2>Begin within</h2>
+        <h3>every piece tells a story</h3>
+        <p>This is my inner place — arts I've made, crafts I've woven, drifts I've written, and the root of it all.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number" id="artsCount">12</span>
+            <span class="stat-label">Artworks</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="craftCount">8</span>
+            <span class="stat-label">Crafts</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="driftCount">24</span>
+            <span class="stat-label">Drifts</span>
+          </div>
+        </div>
+        <a href="drift.html" class="hero-btn">read latest drift →</a>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <div class="section-container">
+        <h2 class="section-title">enter the rooms</h2>
+        <div class="preview-grid">
+          <div class="preview-card" data-url="arts.html" data-room="arts" data-whisper="letting the eye wander...">
+            <div class="preview-icon">◈</div>
+            <h3>Arts</h3>
+            <p>photography · drawing · painting</p>
+            <div class="card-hint">—— pull ——</div>
+          </div>
+          <div class="preview-card" data-url="craft.html" data-room="craft" data-whisper="hands remembering...">
+            <div class="preview-icon">⌗</div>
+            <h3>Craft</h3>
+            <p>crochet · diy · handmade</p>
+            <div class="card-hint">—— pull ——</div>
+          </div>
+          <div class="preview-card" data-url="drift.html" data-room="drift" data-whisper="thoughts begin to float...">
+            <div class="preview-icon">〜</div>
+            <h3>Drift</h3>
+            <p>writing · music · thoughts</p>
+            <div class="card-hint">—— pull ——</div>
+          </div>
+          <div class="preview-card" data-url="root.html" data-room="root" data-whisper="returning to the source...">
+            <div class="preview-icon">⎔</div>
+            <h3>Root</h3>
+            <p>the source · about me</p>
+            <div class="card-hint">—— pull ——</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p class="footer-message">Klinth Lob — inner place shared outward</p>
+      <p class="footer-copyright">KLINTH LOB</p>
+    </div>
+  </footer>
+
+  <div class="fade-overlay" id="fadeOverlay"></div>
+  <div class="whisper" id="whisper"></div>
+
+  <script src="scripts.js"></script>
+  <script>
+    const whispers = {
+      arts: "letting the eye wander...",
+      craft: "hands remembering...",
+      drift: "thoughts begin to float...",
+      root: "returning to the source..."
+    };
+
+    const fadeOverlay = document.getElementById('fadeOverlay');
+    const whisperEl = document.getElementById('whisper');
+
+    function navigateWithRitual(url, room) {
+      if (whispers[room]) {
+        whisperEl.textContent = whispers[room];
+        whisperEl.classList.add('show');
+        setTimeout(() => whisperEl.classList.remove('show'), 800);
+      }
+      fadeOverlay.classList.add('active');
+      setTimeout(() => { window.location.href = url; }, 400);
+    }
+
+    document.querySelectorAll('.preview-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = card.getAttribute('data-url');
+        const room = card.getAttribute('data-room');
+        if (url) navigateWithRitual(url, room);
+      });
+    });
+
+    document.body.addEventListener('click', (e) => {
+      if (!e.target.closest('.preview-card')) {
+        whisperEl.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
