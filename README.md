@@ -17,20 +17,6 @@ Creative coding	HTML, CSS, JavaScript
 Art and design	Clean, responsive UI
 Culture and heritage	Khmer storytelling
 Learning new things	Adapting quickly
-Pages
-
-index.html – Welcome
-arts.html – Art showcase
-craft.html – Crafts
-drift.html – Drift
-root.html – Root
-begin.html – Begin
-Explore
 
 Open index.html in your browser and enjoy.
-
-Connect
-
-GitHub: chansoklin
-
 "Build what you love."
