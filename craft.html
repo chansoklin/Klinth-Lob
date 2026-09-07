@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLINTH LOB · Craft</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .craft-section {
+      margin-bottom: 3rem;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+    .section-header h2 {
+      font-size: 1.6rem;
+      font-weight: 450;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .section-header .section-count {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+    .section-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .craft-piece {
+      background: var(--card-bg);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .craft-piece:hover {
+      border-color: var(--accent);
+      background: var(--pale-lavender);
+      transform: translateY(-3px);
+    }
+    .craft-image {
+      background: var(--pale-lavender);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.8rem;
+      font-weight: 300;
+      border-bottom: 1px solid var(--border-light);
+      letter-spacing: 4px;
+    }
+    .craft-title {
+      padding: 0.8rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .craft-year {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>
+          <a href="begin.html">
+            <span class="logo-text">KLINTH</span>
+            <span class="logo-lob"> LOB</span>
+          </a>
+        </h1>
+        <p class="tagline">inner place · shared outward</p>
+      </div>
+      <nav class="main-nav">
+        <a href="begin.html">Begin</a>
+        <a href="arts.html">Arts</a>
+        <a href="craft.html" class="active">Craft</a>
+        <a href="drift.html">Drift</a>
+        <a href="root.html">Root</a>
+      </nav>
+      <button id="darkModeToggle" class="dark-mode-btn">Dark</button>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Craft</h1>
+    <div class="section-sub">thread · hand · fold</div>
+
+    <div class="craft-section">
+      <div class="section-header">
+        <h2>Crochet</h2>
+        <span class="section-count">loops & threads</span>
+      </div>
+      <div class="section-gallery">
+        <div class="craft-piece" data-title="Woven Vessel No. 1" data-year="2024">
+          <div class="craft-image">◌ ◌ ◌</div>
+          <div class="craft-title">Woven Vessel No. 1 <span class="craft-year">(2024)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Coasters Set" data-year="2024">
+          <div class="craft-image">◌ ◌ ◌</div>
+          <div class="craft-title">Coasters Set <span class="craft-year">(2024)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Wall Hanging" data-year="2023">
+          <div class="craft-image">◌ ◌ ◌</div>
+          <div class="craft-title">Wall Hanging <span class="craft-year">(2023)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Plant Holder" data-year="2023">
+          <div class="craft-image">◌ ◌ ◌</div>
+          <div class="craft-title">Plant Holder <span class="craft-year">(2023)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="craft-section">
+      <div class="section-header">
+        <h2>DIY</h2>
+        <span class="section-count">by hand</span>
+      </div>
+      <div class="section-gallery">
+        <div class="craft-piece" data-title="Ceramic Mug" data-year="2024">
+          <div class="craft-image">— — —</div>
+          <div class="craft-title">Ceramic Mug <span class="craft-year">(2024)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Wooden Shelf" data-year="2024">
+          <div class="craft-image">— — —</div>
+          <div class="craft-title">Wooden Shelf <span class="craft-year">(2024)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Mended Jeans" data-year="2023">
+          <div class="craft-image">— — —</div>
+          <div class="craft-title">Mended Jeans <span class="craft-year">(2023)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Paper Lantern" data-year="2023">
+          <div class="craft-image">— — —</div>
+          <div class="craft-title">Paper Lantern <span class="craft-year">(2023)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="craft-section">
+      <div class="section-header">
+        <h2>Handicraft</h2>
+        <span class="section-count">traditional making</span>
+      </div>
+      <div class="section-gallery">
+        <div class="craft-piece" data-title="Embroidery Hoop" data-year="2024">
+          <div class="craft-image">▪ ▪ ▪</div>
+          <div class="craft-title">Embroidery Hoop <span class="craft-year">(2024)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Hand-dipped Candle" data-year="2024">
+          <div class="craft-image">▪ ▪ ▪</div>
+          <div class="craft-title">Hand-dipped Candle <span class="craft-year">(2024)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Woven Basket" data-year="2023">
+          <div class="craft-image">▪ ▪ ▪</div>
+          <div class="craft-title">Woven Basket <span class="craft-year">(2023)</span></div>
+        </div>
+        <div class="craft-piece" data-title="Leather Pouch" data-year="2023">
+          <div class="craft-image">▪ ▪ ▪</div>
+          <div class="craft-title">Leather Pouch <span class="craft-year">(2023)</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p class="footer-message">KLINTH LOB · by hand</p>
+      <p class="footer-copyright">KLINTH LOB</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.querySelectorAll('.craft-piece').forEach(piece => {
+      piece.addEventListener('click', () => {
+        const title = piece.getAttribute('data-title') || 'Untitled';
+        const year = piece.getAttribute('data-year') || '';
+        const fullTitle = year ? `${title} (${year})` : title;
+        if (window.showLightbox) window.showLightbox('⌗', fullTitle);
+      });
+    });
+  </script>
+</body>
+</html>
